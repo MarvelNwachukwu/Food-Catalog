@@ -1,0 +1,233 @@
+
+
+main{
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    width: 80%;
+    margin: 15% auto;
+    column-gap: 3em;
+   
+}
+
+.foodcard img{
+    width: 40%;
+
+}
+
+.foodcard{
+    text-align: center;
+    font-family: 'Dosis', sans-serif;
+    line-height: 1.5em;
+    background: white;
+    
+}
+
+.foodcard button,
+section button{
+    background: transparent;
+    border: 1px solid #4b6cb7;
+    border-radius: 30px;
+    padding: 1em 2em;
+    cursor: pointer;
+    transition: transform 0.4s ease-in-out;
+}
+
+
+.foodcard button:hover,
+section button:hover{
+    background: linear-gradient(to top right, #4776e6, #8e54e9);
+    color: white;
+    transform: scale(1.2);
+}
+
+
+
+
+
+section{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-column-gap: 2em;
+    width: 70%;
+    margin: 7em auto;
+    background-color: white;
+    padding: 2em;
+    position: relative;
+    /* border: 1px solid  black */
+    text-align: center;
+}
+
+section::before{
+    content: "";
+    width: 114%;
+    height: 114%;
+    position: absolute;
+    top: -7%;
+    left: -4%;
+    background: linear-gradient(to top right, #4776e6, #8e54e9);
+    z-index: -1;
+    -webkit-clip-path: polygon(15% 0, 100% 0, 81% 100%, 0 99%);
+clip-path: polygon(15% 0, 100% 0, 81% 100%, 0 99%);
+    animation: moving 1s ease-in-out infinite alternate;
+}
+
+
+
+.infotext h1{
+    font-family: 'Nunito', sans-serif;
+    font-size: 3em;
+    /* padding: 0.2em 0; */
+    width: 100%;
+    background: -webkit-linear-gradient(#4776e6, #8e54e9);
+    -webkit-background-clip: text;
+    opacity: 0.9;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+    
+
+    
+
+}
+
+
+.infotext p{
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.3em;
+    width: 80%;
+    opacity: 0.8;
+    text-align: center;
+    width: 80%;
+    margin: 1em auto
+
+}
+
+section b{
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.5em;
+    background-color: white;
+    display: inline-block;
+    width: 3.6%;
+    text-align: center;
+    border-radius: 30px;
+    position: absolute;
+    top: -3%;
+    right: -3%;
+    border: 5px solid #8e54e9;
+    color: #8e54e9;
+    cursor: pointer;
+
+}
+
+
+
+
+
+section img{
+    width: 100%;
+}
+
+
+
+/* Animations */
+
+@keyframes moving{
+    from{
+        transform: translateY(0.7em)
+    }
+
+    to{
+        transform: translateX(0.9em)
+    }
+}
+
+
+
+
+/* Styles for when on tablet */
+
+@media(max-width: 760px){
+    main{
+        display: inline-block;
+        width: 100%;
+
+    }
+
+    .foodcard{
+        width: 70%;
+        margin: 3em auto;
+        box-shadow: #7d7c803f 1px 1px 23px 2px;
+        padding: 4em 0;
+    }
+
+    section{
+        display: inline-block;
+        width: 80%;
+        margin: 2em auto;
+    }
+
+    section::before{
+        width: 100%;
+        height: 106%;
+        -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+        top: -3%;
+        left: 0;
+        animation: none;
+    }
+
+    section img{
+        width: 40%;
+    }
+
+    section b{
+        font-size: 2em;
+        width: 6.9%;
+        text-align: center;
+        border-radius: 30px;
+        position: absolute;
+        top: 3%;
+        right: 0%;
+        border: none;
+        color: #8e54e9;
+        cursor: pointer;
+        box-shadow: #8d54e95d 1px 1px 8px 2px;
+        background-color: #ffffff;
+    
+    }
+}
+
+
+/* For Mobile */
+
+@media(max-width: 408px){
+    main{
+        display: inline-block;
+        width: 100%;
+
+    }
+
+    .foodcard{
+        width: 100%;
+        margin: 3em auto;
+        box-shadow: #7d7c803f 1px 1px 23px 2px;
+        padding: 1em 0;
+       
+    }
+
+    section b{
+        font-size: 1.1em;
+        width: 5.3%;
+        text-align: center;
+        border-radius: 30px;
+        position: absolute;
+        top: 3%;
+        right: 0%;
+        border: none;
+        color: #8e54e9;
+        cursor: pointer;
+        box-shadow: #8d54e95d 1px 1px 8px 2px;
+        background-color: #ffffff;
+        transform: scale(1.2)
+    
+    }
+}
